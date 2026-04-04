@@ -1,3 +1,88 @@
-local encoded = "LS0vLyBMT0FEIFJBWUZJRUxECmxvY2FsIFJheWZpZWxkID0gbG9hZHN0cmluZyhnYW1lOkh0dHBHZXQoJ2h0dHBzOi8vc2lyaXVzLm1lbnUvcmF5ZmllbGQnKSkoKQoKLS0vLyBXSU5ET1cgKyBLRVkgU1lTVEVNCmxvY2FsIFdpbmRvdyA9IFJheWZpZWxkOkNyZWF0ZVdpbmRvdyh7CiAgICBOYW1lID0gIlRvb2wgSHViIiwKICAgIExvYWRpbmdUaXRsZSA9ICJMb2FkaW5nLi4uIiwKICAgIExvYWRpbmdTdWJ0aXRsZSA9ICJieSBI4bqjSSBBTkgiLAogICAgCiAgICBDb25maWd1cmF0aW9uU2F2aW5nID0gewogICAgICAgIEVuYWJsZWQgPSBmYWxzZQogICAgfSwKCiAgICBLZXlTeXN0ZW0gPSB0cnVlLAogICAgS2V5U2V0dGluZ3MgPSB7CiAgICAgICAgVGl0bGUgPSAiTmjhuq1wIEtleSIsCiAgICAgICAgU3VidGl0bGUgPSAiVG9vbCBIdWIiLAogICAgICAgIE5vdGUgPSAiVlVJIEzDg1kgTkjhuq1QIMSQw5pORyIsCiAgICAgICAgRmlsZU5hbWUgPSAiS2V5IiwKICAgICAgICBTYXZlS2V5ID0gdHJ1ZSwKICAgICAgICBHcmFiS2V5RnJvbVNpdGUgPSBmYWxzZSwKICAgICAgICBLZXkgPSB7IkJMT1hZLUpRS0EifQogICAgfQp9KQoKLS0vLyBUQUIKbG9jYWwgVGFiID0gV2luZG93OkNyZWF0ZVRhYigiTWFpbiIsIDQ0ODMzNjI0NTgpCgoKLS0vLyBTRVJWSUNFUwpsb2NhbCBQbGF5ZXJzID0gZ2FtZTpHZXRTZXJ2aWNlKCJQbGF5ZXJzIikKbG9jYWwgcGxheWVyID0gUGxheWVyczpMb2NhbFBsYXllcgoKLS0vLyBTVEFURQpsb2NhbCBlbmFibGVkID0gZmFsc2UKbG9jYWwgdG9vbCA9IG5pbAoKLS0vLyBDUkVBVEUgVE9PTApsb2NhbCBmdW5jdGlvbiBjcmVhdGVUb29sKCkKICAgIGlmIHRvb2wgdGhlbiB0b29sOkRlc3Ryb3koKSBlbmQKCiAgICB0b29sID0gSW5zdGFuY2UubmV3KCJUb29sIikKICAgIHRvb2wuTmFtZSA9ICJUZWxlcG9ydCBUb29sIgogICAgdG9vbC5SZXF1aXJlc0hhbmRsZSA9IGZhbHNlCiAgICB0b29sLlBhcmVudCA9IHBsYXllci5CYWNrcGFjawoKICAgIHRvb2wuQWN0aXZhdGVkOkNvbm5lY3QoZnVuY3Rpb24oKQogICAgICAgIGlmIG5vdCBlbmFibGVkIHRoZW4gcmV0dXJuIGVuZAoKICAgICAgICBsb2NhbCBjaGFyID0gcGxheWVyLkNoYXJhY3RlciBvciBwbGF5ZXIuQ2hhcmFjdGVyQWRkZWQ6V2FpdCgpCiAgICAgICAgbG9jYWwgaHJwID0gY2hhcjpGaW5kRmlyc3RDaGlsZCgiSHVtYW5vaWRSb290UGFydCIpCiAgICAgICAgaWYgbm90IGhycCB0aGVuIHJldHVybiBlbmQKICAgICAgICAKICAgICAgICBsb2NhbCBtb3VzZSA9IHBsYXllcjpHZXRNb3VzZSgpCiAgICAgICAgaWYgbm90IG1vdXNlIHRoZW4gcmV0dXJuIGVuZAoKICAgICAgICBsb2NhbCBwb3MgPSBtb3VzZS5IaXQuUG9zaXRpb24KICAgICAgICBpZiBwb3MgdGhlbiAgaHJwLkNGcmFtZSA9IENGcmFtZS5uZXcocG9zICsgVmVjdG9yMy5uZXcoMCwzLDApKSBlbmQKICAgIGVuZCkKZW5kCgoKLS0vLyBBVVRPIFJFU1BBV04gVE9PTApwbGF5ZXIuQ2hhcmFjdGVyQWRkZWQ6Q29ubmVjdChmdW5jdGlvbigpCiAgICBpZiBlbmFibGVkIHRoZW4KICAgICAgICB0YXNrLndhaXQoMSkKICAgICAgICBjcmVhdGVUb29sKCkKICAgIGVuZAplbmQpCgoKLS0vLyBUT0dHTEUgVE9PTApUYWI6Q3JlYXRlVG9nZ2xlKHsKICAgIE5hbWUgPSAiQ3JlYXRlIFRlbGVwb3J0IFRvb2wiLAogICAgRGVzY3JpcHRpb24gPSAiQ2xpY2sgxJHhu4Mg dGVsZXBvcnQiLAogICAgQ3VycmVudFZhbHVlID0gZmFsc2UsCiAgICBDYWxsYmFjayA9IGZ1bmN0aW9uKHZhbHVlKQogICAgICAgIGVuYWJsZWQgPSB2YWx1ZQoKICAgICAgICBpZiBlbmFibGVkIHRoZW4KICAgICAgICAgICAgY3JlYXRlVG9vbCgpCiAgICAgICAgZWxzZQogICAgICAgICAgICBpZiB0b29sIHRoZW4gdG9vbDpEZXN0cm95KCkgdG9vbCA9IG5pbCBlbmQKICAgICAgICBlbmQKICAgIGVuZAp9KQ=="
+--// LOAD RAYFIELD
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
-loadstring(game:HttpGet("https://pastebin.com/raw/decoder"))()(encoded)
+--// WINDOW + KEY SYSTEM
+local Window = Rayfield:CreateWindow({
+    Name = "Tool Hub",
+    LoadingTitle = "Loading...",
+    LoadingSubtitle = "by HẢI ANH",
+    
+    ConfigurationSaving = {
+        Enabled = false
+    },
+
+    KeySystem = true, -- bật key system
+    KeySettings = {
+        Title = "Nhập Key",
+        Subtitle = "Tool Hub",
+        Note = "LẤY KEY Ở @taoscriptsharresoucre", -- dòng nhỏ
+        FileName = "Key", -- lưu key
+        SaveKey = true, -- nhớ key
+        GrabKeyFromSite = false, -- không lấy web
+        Key = {"BLOXY-JQKA"} -- key của bạn
+    }
+})
+
+--// TAB
+local Tab = Window:CreateTab("Main", 4483362458)
+
+--// SERVICES
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+--// STATE
+local enabled = false
+local tool = nil
+
+--// CREATE TOOL (GIỮ TELEPORT CŨ)
+local function createTool()
+    if tool then tool:Destroy() end
+
+    tool = Instance.new("Tool")
+    tool.Name = "Teleport Tool"
+    tool.RequiresHandle = false
+    tool.Parent = player.Backpack
+
+    tool.Activated:Connect(function()
+        if not enabled then return end
+
+        local char = player.Character or player.CharacterAdded:Wait()
+        local hrp = char:FindFirstChild("HumanoidRootPart")
+        if not hrp then return end
+        
+        local mouse = player:GetMouse()
+        if not mouse then return end
+
+        local pos = mouse.Hit.Position
+        if pos then
+            hrp.CFrame = CFrame.new(pos + Vector3.new(0,3,0))
+        end
+    end)
+end
+
+--// AUTO RESPAWN TOOL
+player.CharacterAdded:Connect(function()
+    if enabled then
+        task.wait(1)
+        createTool()
+    end
+end)
+
+--// TOGGLE TOOL
+Tab:CreateToggle({
+    Name = "Create Teleport Tool",
+    Description = "Click để teleport (bản cũ)",
+    CurrentValue = false,
+    Callback = function(value)
+        enabled = value
+
+        if enabled then
+            createTool()
+        else
+            if tool then
+                tool:Destroy()
+                tool = nil
+            end
+        end
+    end,
+})
